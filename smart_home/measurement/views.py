@@ -22,7 +22,7 @@ class SensorListCreate(ListCreateAPIView):
 
 class SensorRetrieveUpdate(RetrieveUpdateAPIView):
     queryset = Sensor.objects.all()
-    serializer_class = SensorSerializer
+    serializer_class = SensorDetailSerializer
 
     def update(self, request, pk=None):
         sensor_pk = SensorDetailSerializer(Sensor.objects.get(pk=pk), data=request.data)
